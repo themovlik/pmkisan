@@ -1,5 +1,1 @@
-- 👋 Hi, I’m @themovlik
-- 👀 I’m interested in learn code
-- 🌱 I’m currently learning React Native & React JS
-- 💞️ I’m looking to collaborate on web and mobile development
-- 📫 Send mail on themovlik@gmail.com
+
