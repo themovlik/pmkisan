@@ -1,0 +1,181 @@
+import React from 'react';
+import {
+  Box,
+  HStack,
+  Text,
+  Pressable,
+  Image,
+  Heading,
+  VStack,
+  ScrollView,
+  Flex,
+  Divider,
+} from 'native-base';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {COLORS} from '../../../constants';
+import {ListContainer} from '../../../components';
+//import Images
+import Modi from '../../../assets/images/modi.png';
+import Document from '../../../assets/images/document.png';
+import Adhar from '../../../assets/images/adhar.png';
+import Awas from '../../../assets/images/awas.png';
+import Nrega from '../../../assets/images/nrega.png';
+import Pension from '../../../assets/images/pension.png';
+import Panchayat from '../../../assets/images/panchayat.png';
+
+const HomeScreen = () => {
+  return (
+    <>
+      <HStack alignItems="center" p={2} bg="emerald.500">
+        <Pressable mr="2" onPress={() => console.log('pressed')}>
+          <Ionicons name="menu" size={30} color={COLORS.white} />
+        </Pressable>
+        <Text fontWeight="medium" color={COLORS.white}>
+          PM-KISAN योजना
+        </Text>
+      </HStack>
+      <Box bg="emerald.500" h="200" flexDirection="row">
+        <Image source={Modi} alt="image not found" size="xl" ml="3" />
+        <Box mt="7" ml="-6">
+          <Heading size="sm" color={COLORS.white} numberOfLines={1}>
+            PM Kisan Samman Nidhi Yojna 2021
+          </Heading>
+          <Text color={COLORS.white}>किसानो की समृद्धि हमारी जिम्मेदारी</Text>
+        </Box>
+      </Box>
+      <Box
+        flex="1"
+        mt="-20"
+        borderTopLeftRadius="30"
+        borderTopRightRadius="30"
+        overflow="hidden"
+        alignItems="center"
+        bg="emerald.50">
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <VStack px="5">
+            <HStack space="6" alignSelf="center">
+              <ListContainer
+                hTitle="मुख्य पेज"
+                eTitle="Main Page"
+                icon="home"
+                onPress={() => console.log('pressed')}
+              />
+              <ListContainer
+                hTitle="नया पंजीकरण करे"
+                eTitle="New Farmer Registration"
+                icon="person-add"
+                onPress={() => console.log('pressed')}
+              />
+            </HStack>
+            <HStack space="6" alignSelf="center">
+              <ListContainer
+                hTitle="अपना खाता देखें"
+                eTitle="View Your Account"
+                iconImage={Document}
+                tintColor={COLORS.white}
+                onPress={() => console.log('pressed')}
+              />
+              <ListContainer
+                hTitle="आधार नंबर बदलें"
+                eTitle="Change Adhaar Number "
+                iconImage={Adhar}
+                iconSize={16}
+                tintColor={COLORS.white}
+                onPress={() => console.log('pressed')}
+              />
+            </HStack>
+            <HStack space="6" alignSelf="center">
+              <ListContainer
+                hTitle="आवास योजना"
+                eTitle="Awas Yojana"
+                iconImage={Awas}
+                tintColor={COLORS.white}
+                iconSize={100}
+                onPress={() => console.log('pressed')}
+              />
+              <ListContainer
+                hTitle="नरेगा जॉब कार्ड"
+                eTitle="Nrega Job Card"
+                iconImage={Nrega}
+                iconSize={16}
+                tintColor={COLORS.white}
+                onPress={() => console.log('pressed')}
+              />
+            </HStack>
+            <HStack space="6" alignSelf="center">
+              <ListContainer
+                hTitle="पेंशन योजना"
+                eTitle="Pension Yojana"
+                iconImage={Pension}
+                tintColor={COLORS.white}
+                iconSize={12}
+                onPress={() => console.log('pressed')}
+              />
+              <ListContainer
+                hTitle="ग्राम पंचायत रिपोर्ट"
+                eTitle="Panchayat Report"
+                iconImage={Panchayat}
+                iconSize={12}
+                tintColor={COLORS.white}
+                onPress={() => console.log('pressed')}
+              />
+            </HStack>
+            <Pressable
+              borderWidth="1"
+              borderColor="emerald.500"
+              rounded="md"
+              p="3"
+              alignItems="center"
+              my="5"
+              onPress={() => console.log('pressed')}>
+              <Text color="emerald.600" fontSize="md">
+                PM किसान सम्मान निधि योजना क्या है
+              </Text>
+            </Pressable>
+            <Pressable
+              borderWidth="1"
+              borderColor="emerald.500"
+              rounded="md"
+              p="3"
+              alignItems="center"
+              mb="5"
+              onPress={() => console.log('pressed')}>
+              <HStack alignItems="center">
+                <MaterialIcon
+                  name="lightning-bolt"
+                  size={40}
+                  color="#10b981"
+                  style={{
+                    borderRightWidth: 1,
+                    borderColor: '#10b981',
+                    padding: 5,
+                  }}
+                />
+                <Box flex="1">
+                  <Text
+                    color="emerald.500"
+                    w="90%"
+                    fontSize="lg"
+                    textAlign="center"
+                    mb="1">
+                    अन्य सेवाएं
+                  </Text>
+                  <Text
+                    color="emerald.800"
+                    w="90%"
+                    fontSize="lg"
+                    textAlign="center">
+                    Other Services
+                  </Text>
+                </Box>
+              </HStack>
+            </Pressable>
+          </VStack>
+        </ScrollView>
+      </Box>
+    </>
+  );
+};
+
+export default HomeScreen;
