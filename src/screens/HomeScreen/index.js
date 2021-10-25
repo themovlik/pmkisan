@@ -8,8 +8,6 @@ import {
   Heading,
   VStack,
   ScrollView,
-  Flex,
-  Divider,
 } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -24,24 +22,26 @@ import Nrega from '../../../assets/images/nrega.png';
 import Pension from '../../../assets/images/pension.png';
 import Panchayat from '../../../assets/images/panchayat.png';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <>
-      <HStack alignItems="center" p={2} bg="emerald.500">
-        <Pressable mr="2" onPress={() => console.log('pressed')}>
+      <HStack alignItems="center" bg="emerald.500">
+        <Pressable p="4" onPress={() => navigation.openDrawer()}>
           <Ionicons name="menu" size={30} color={COLORS.white} />
         </Pressable>
-        <Text fontWeight="medium" color={COLORS.white}>
-          PM-KISAN योजना
+        <Text fontWeight="medium" fontSize="lg" color={COLORS.white}>
+          PM-Kisan Yojana
         </Text>
       </HStack>
       <Box bg="emerald.500" h="200" flexDirection="row">
         <Image source={Modi} alt="image not found" size="xl" ml="3" />
-        <Box mt="7" ml="-6">
-          <Heading size="sm" color={COLORS.white} numberOfLines={1}>
-            PM Kisan Samman Nidhi Yojna 2021
+        <Box mt="5" ml="-8">
+          <Heading numberOfLines={1} size="sm" color={COLORS.white}>
+            PM-Kisan Samman Nidhi Yojana 2021
           </Heading>
-          <Text color={COLORS.white}>किसानो की समृद्धि हमारी जिम्मेदारी</Text>
+          <Text numberOfLines={1} color={COLORS.white}>
+            किसानो की समृद्धि हमारी जिम्मेदारी
+          </Text>
         </Box>
       </Box>
       <Box
@@ -59,7 +59,9 @@ const HomeScreen = () => {
                 hTitle="मुख्य पेज"
                 eTitle="Main Page"
                 icon="home"
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {hTitle: 'मुख्य पेज'})
+                }
               />
               <ListContainer
                 hTitle="नया पंजीकरण करे"
@@ -127,6 +129,18 @@ const HomeScreen = () => {
               rounded="md"
               p="3"
               alignItems="center"
+              mt="5"
+              onPress={() => console.log('pressed')}>
+              <Text color="emerald.600" fontSize="md">
+                अपने गांव की लिस्ट देखे
+              </Text>
+            </Pressable>
+            <Pressable
+              borderWidth="1"
+              borderColor="emerald.500"
+              rounded="md"
+              p="3"
+              alignItems="center"
               my="5"
               onPress={() => console.log('pressed')}>
               <Text color="emerald.600" fontSize="md">
@@ -140,7 +154,7 @@ const HomeScreen = () => {
               p="3"
               alignItems="center"
               mb="5"
-              onPress={() => console.log('pressed')}>
+              onPress={() => navigation.navigate('ServiceScreen')}>
               <HStack alignItems="center">
                 <MaterialIcon
                   name="lightning-bolt"
