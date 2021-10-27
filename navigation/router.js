@@ -49,9 +49,9 @@ const CustomDrawerContent = props => {
           title="Privacy Policy"
           icon="lock-closed"
           onPress={() => {
-            Linking.openURL('https://www.google.com/').catch(err =>
-              console.log("Couldn't load page", err),
-            );
+            Linking.openURL(
+              'https://pm-kisan-yojana.flycricket.io/privacy.html/',
+            ).catch(err => console.log("Couldn't load page", err));
           }}
         />
         <MenuButton

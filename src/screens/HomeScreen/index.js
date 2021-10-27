@@ -60,14 +60,22 @@ const HomeScreen = ({navigation}) => {
                 eTitle="Main Page"
                 icon="home"
                 onPress={() =>
-                  navigation.navigate('ContentScreen', {hTitle: 'मुख्य पेज'})
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'मुख्य पेज',
+                    link: 'https://pmkisan.gov.in/',
+                  })
                 }
               />
               <ListContainer
                 hTitle="नया पंजीकरण करे"
                 eTitle="New Farmer Registration"
                 icon="person-add"
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'नया पंजीकरण करे',
+                    link: 'https://pmkisan.gov.in/RegistrationFormnew.aspx',
+                  })
+                }
               />
             </HStack>
             <HStack space="6" alignSelf="center">
@@ -76,7 +84,12 @@ const HomeScreen = ({navigation}) => {
                 eTitle="View Your Account"
                 iconImage={Document}
                 tintColor={COLORS.white}
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'अपना खाता देखें',
+                    link: 'https://pmkisan.gov.in/BeneficiaryStatus.aspx',
+                  })
+                }
               />
               <ListContainer
                 hTitle="आधार नंबर बदलें"
@@ -84,17 +97,27 @@ const HomeScreen = ({navigation}) => {
                 iconImage={Adhar}
                 iconSize={16}
                 tintColor={COLORS.white}
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'आधार नंबर बदलें',
+                    link: 'https://pmkisan.gov.in/UpdateAadharNoByFarmer.aspx',
+                  })
+                }
               />
             </HStack>
             <HStack space="6" alignSelf="center">
               <ListContainer
                 hTitle="आवास योजना"
-                eTitle="Awas Yojana"
+                eTitle="PM-Awas Yojana"
                 iconImage={Awas}
                 tintColor={COLORS.white}
                 iconSize={100}
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'आवास योजना',
+                    link: 'https://pmaymis.gov.in/Track_Application_Status.aspx',
+                  })
+                }
               />
               <ListContainer
                 hTitle="नरेगा जॉब कार्ड"
@@ -102,7 +125,12 @@ const HomeScreen = ({navigation}) => {
                 iconImage={Nrega}
                 iconSize={16}
                 tintColor={COLORS.white}
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'नरेगा जॉब कार्ड',
+                    link: 'https://nregade.nic.in/netnrega/statepage.aspx?check=D&level=HomeGP&Digest=vl8QJFBEIKDKUDyg+d5PPQ',
+                  })
+                }
               />
             </HStack>
             <HStack space="6" alignSelf="center">
@@ -112,7 +140,12 @@ const HomeScreen = ({navigation}) => {
                 iconImage={Pension}
                 tintColor={COLORS.white}
                 iconSize={12}
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'पेंशन योजना',
+                    link: 'https://sspy-up.gov.in/HindiPages/index_h.aspx',
+                  })
+                }
               />
               <ListContainer
                 hTitle="ग्राम पंचायत रिपोर्ट"
@@ -120,7 +153,12 @@ const HomeScreen = ({navigation}) => {
                 iconImage={Panchayat}
                 iconSize={12}
                 tintColor={COLORS.white}
-                onPress={() => console.log('pressed')}
+                onPress={() =>
+                  navigation.navigate('ContentScreen', {
+                    hTitle: 'ग्राम पंचायत रिपोर्ट',
+                    link: 'https://egramswaraj.gov.in/actionPlanReportForGP.do',
+                  })
+                }
               />
             </HStack>
             <Pressable
@@ -130,7 +168,12 @@ const HomeScreen = ({navigation}) => {
               p="3"
               alignItems="center"
               mt="5"
-              onPress={() => console.log('pressed')}>
+              onPress={() =>
+                navigation.navigate('ContentScreen', {
+                  hTitle: 'अपने गांव की लिस्ट देखे',
+                  link: 'https://pmkisan.gov.in/Rpt_BeneficiaryStatus_pub.aspx',
+                })
+              }>
               <Text color="emerald.600" fontSize="md">
                 अपने गांव की लिस्ट देखे
               </Text>
@@ -142,9 +185,14 @@ const HomeScreen = ({navigation}) => {
               p="3"
               alignItems="center"
               my="5"
-              onPress={() => console.log('pressed')}>
+              onPress={() =>
+                navigation.navigate('ContentScreen', {
+                  hTitle: 'PM-किसान सम्मान निधि योजना क्या है',
+                  link: 'https://pmkisan.gov.in/NewHome3.aspx#About',
+                })
+              }>
               <Text color="emerald.600" fontSize="md">
-                PM किसान सम्मान निधि योजना क्या है
+                PM-किसान सम्मान निधि योजना क्या है
               </Text>
             </Pressable>
             <Pressable
