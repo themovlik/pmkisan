@@ -31,28 +31,48 @@ const ServiceScreen = ({navigation}) => {
         bg="emerald.50">
         <ScrollView showsVerticalScrollIndicator={false} width="full">
           <ServiceButton
+            title="Adhar Card Stutus"
+            imageIcon={Adhar}
+            iconSize={35}
+            onPress={() =>
+              navigation.navigate('ContentScreen', {
+                hTitle: 'Adhar Card Stutus',
+                link: 'https://resident.uidai.gov.in/check-aadhaar',
+              })
+            }
+          />
+          <ServiceButton
             title="Pan Card Stutus"
             icon="address-card"
             iconSize={30}
-            onPress={() => console.log('pressed')}
+            onPress={() =>
+              navigation.navigate('ContentScreen', {
+                hTitle: 'Pan Card Stutus',
+                link: 'https://tin.tin.nsdl.com/pantan/StatusTrack.html',
+              })
+            }
           />
           <ServiceButton
             title="Passport Status"
             icon="user-alt"
             iconSize={30}
-            onPress={() => console.log('pressed')}
+            onPress={() =>
+              navigation.navigate('ContentScreen', {
+                hTitle: 'Passport Status',
+                link: 'https://passportindia.gov.in/AppOnlineProject/statusTracker/trackStatusInpNew',
+              })
+            }
           />
           <ServiceButton
             title="PNR Status"
             icon="list-alt"
             iconSize={30}
-            onPress={() => console.log('pressed')}
-          />
-          <ServiceButton
-            title="Adhar Card Stutus"
-            imageIcon={Adhar}
-            iconSize={35}
-            onPress={() => console.log('pressed')}
+            onPress={() =>
+              navigation.navigate('ContentScreen', {
+                hTitle: 'PNR Status',
+                link: 'http://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html?locale=hi',
+              })
+            }
           />
         </ScrollView>
       </Box>
