@@ -15,13 +15,22 @@ import ContentScreen from '../src/screens/ContentScreen';
 import MenuButton from '../components/MenuButton';
 import {COLORS} from '../constants';
 import Modi from '../assets/images/modi.png';
-import {Linking} from 'react-native';
+import {Linking, Share} from 'react-native';
 
 // Navigators
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
+const shareOptions = {
+  title: 'Share this app',
+  message: 'Message to share',
+  url: '',
+  subject: 'Subject',
+};
+
 const CustomDrawerContent = props => {
+  const onShare = () => Share.share(shareOptions);
+
   return (
     <DrawerContentScrollView {...props}>
       <Box bgColor="emerald.500" pt="5" mt="-2" h="189" alignItems="center">
@@ -34,9 +43,7 @@ const CustomDrawerContent = props => {
         <MenuButton
           title="Share"
           icon="share-social"
-          onPress={() => {
-            props.navigation.navigate('HomeScreen');
-          }}
+          onPress={() => onShare()}
         />
         <MenuButton
           title="Rate US"
@@ -50,7 +57,7 @@ const CustomDrawerContent = props => {
           icon="lock-closed"
           onPress={() => {
             Linking.openURL(
-              'https://pm-kisan-yojana.flycricket.io/privacy.html/',
+              'https://pm-kisan-yojana.flycricket.io/privacy.html',
             ).catch(err => console.log("Couldn't load page", err));
           }}
         />
