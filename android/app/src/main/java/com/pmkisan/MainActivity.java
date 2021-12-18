@@ -10,7 +10,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "pmkisan";
+    return "PM Kisan Samman Nidhi Yojana";
   }
   @Override
   protected void onCreate(Bundle savedInstanceState) {

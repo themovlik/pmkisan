@@ -22,15 +22,15 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const shareOptions = {
-  title: 'Share this app',
-  message: 'Message to share',
-  url: '',
-  subject: 'Subject',
+  title: 'अपने दोस्तो को शेयर करे',
+  message:
+    'PM आवास योजना और सभी योजना इस एक ही ऐप्प में हर योजना की पूरी जानकारी भी अभी डाउनलोड करें \n https://play.google.com/store/apps/details?id=com.pmkisan',
+  url: 'https://play.google.com/store/apps/details?id=com.pmkisan',
+  subject: '',
 };
 
 const CustomDrawerContent = props => {
   const onShare = () => Share.share(shareOptions);
-
   return (
     <DrawerContentScrollView {...props}>
       <Box bgColor="emerald.500" pt="5" mt="-2" h="189" alignItems="center">
@@ -45,13 +45,13 @@ const CustomDrawerContent = props => {
           icon="share-social"
           onPress={() => onShare()}
         />
-        <MenuButton
+        {/* <MenuButton
           title="Rate US"
           icon="star"
           onPress={() => {
             props.navigation.navigate('HomeScreen');
           }}
-        />
+        /> */}
         <MenuButton
           title="Privacy Policy"
           icon="lock-closed"
@@ -61,13 +61,13 @@ const CustomDrawerContent = props => {
             ).catch(err => console.log("Couldn't load page", err));
           }}
         />
-        <MenuButton
+        {/* <MenuButton
           title="Exit App"
           icon="exit"
           onPress={() => {
             props.navigation.navigate('HomeScreen');
           }}
-        />
+        /> */}
       </Box>
     </DrawerContentScrollView>
   );
@@ -76,7 +76,7 @@ const CustomDrawerContent = props => {
 const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="StartScreens"
+      initialRouteName="StartScreen"
       screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
       <Stack.Screen name="StartScreen" component={StartScreen} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />

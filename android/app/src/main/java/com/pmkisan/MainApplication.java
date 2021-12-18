@@ -4,6 +4,10 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import io.xogus.reactnative.versioncheck.RNVersionCheckPackage;
+import suraj.tiwari.reactnativefbads.FBAdsPackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import suraj.tiwari.reactnativefbads.FBAdsPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -31,6 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           new RNCWebViewPackage();
           new SplashScreenReactPackage();
+          new FBAdsPackage();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           return packages;

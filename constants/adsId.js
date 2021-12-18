@@ -1,0 +1,7 @@
+const adsId = {
+  bottom_banner: '407457797775829_437751404746468',
+  medium_banner: '407457797775829_437752961412979',
+  interstitial: '407457797775829_437752051413070',
+};
+
+export default adsId;

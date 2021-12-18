@@ -1,5 +1,5 @@
 {
-  "name": "pmkisan",
+  "name": "PM Kisan Samman Nidhi Yojana",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,14 +16,17 @@
     "native-base": "^3.2.1",
     "react": "^17.0.2",
     "react-native": "^0.66.1",
+    "react-native-fbads": "^7.0.5",
+    "react-native-fbsdk": "^3.0.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-onesignal": "^4.3.1",
     "react-native-reanimated": "^2.2.3",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
     "react-native-splash-screen": "^3.2.0",
-    "react-native-svg": "^12.1.1",
+    "react-native-svg": "^9.12.0",
     "react-native-vector-icons": "^8.1.0",
+    "react-native-version-check": "^3.4.2",
     "react-native-webview": "^11.14.1",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"

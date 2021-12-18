@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">pmkisan</string>
+    <string name="app_name">PM Kisan Samman Nidhi Yojana</string>
+    <string name="facebook_app_id">407457797775829</string>
+    <string name="facebook_client_token">EAAFylKlMIdUBADmuve3T6x90mJCxezognKZCN5kZB2M2UG44RMOKQfnizZAXgmCsw1x8cptPwuBnIwyyGu3VGZAZCLJefF92VadWxRLE1nztgFrGWzZBGqZC5aepnRLfQXc9IZCNVJNSRjV4hstFqiNj5oVo4FLj69UYYmN47jv8EjmZAhi9H3RMGGw2vCyoC3wFw5G0uzX3prwZDZD</string>
+    <string>pm kisan</string>
+    <string>pm kisan samman nidhi</string>
+    <string>pm kisan jojona</string>
+    <string>pm kisan yojana</string>
+    <string>pm kisan beneficiary status</string>
+    <string>pm kisan samman nidhi yojana</string>
+    <string>pm kisan registration</string>
+    <string>pm kisan nidhi</string>
+    <string>pm kisan list</string>
+    <string>pm kisan nidhi yojana</string>
+    <string>pm kisan beneficiary list</string>
+    <string>pm kisan app</string>
+    <string>pm kisan 2021</string>
+    <string>pm kisan portal</string>
+    <string>pm kisan government in</string>
+    <string>pm kisan samman nidhi yojana 2021</string>
+    <string>pm kisan yojana 2021</string>
+    <string>pm kisan benefit status</string>
+    <string>pm kisan payment status</string>
+    <string>pm kisan yojana list</string>
+    <string>pm kisan check</string>
+    <string>pm kisan check status</string>
+    <string>pm kisan tractor yojana</string>
+    <string>pm kisan mandhan yojana</string>
+    <string>pm kisan website</string>
+    <string>pm kisan verification</string>
 </resources>

@@ -18,6 +18,13 @@ target 'pmkisan' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'ReactNativeAdsFacebook', :path => '../node_modules/react-native-fbads'
+
+  pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
+
+
+  pod 'react-native-version-check', :path => '../node_modules/react-native-version-check'
+
   target 'pmkisanTests' do
     inherit! :complete
     # Pods for testing

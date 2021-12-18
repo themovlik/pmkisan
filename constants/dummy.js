@@ -1,8 +1,3 @@
-export const profile = {
-  id: 8888888,
-  email: 'themovlik@gmail.com',
-};
-
 export const settings = {
   launchScreen: 'Home',
   currency: 'USD',
@@ -12,7 +7,6 @@ export const settings = {
 };
 
 const dummyData = {
-  profile,
   settings,
 };
 

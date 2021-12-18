@@ -1,13 +1,23 @@
 import React from 'react';
-import {Box, Text, HStack, Pressable, ScrollView, Heading} from 'native-base';
+import {
+  Box,
+  Text,
+  HStack,
+  Pressable,
+  ScrollView,
+  Heading,
+  StatusBar,
+} from 'native-base';
+import {BannerView} from 'react-native-fbads';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ServiceButton from '../../../components/ServiceButton';
-import {COLORS} from '../../../constants';
+import {appId, COLORS} from '../../../constants';
 import Adhar from '../../../assets/images/adhar.png';
 
 const ServiceScreen = ({navigation}) => {
   return (
     <>
+      <StatusBar backgroundColor="#10b981" barStyle="light-content" />
       <HStack alignItems="center" bg="emerald.500">
         <Pressable p="4" onPress={() => navigation.goBack()}>
           <MaterialIcons name="arrow-left" size={30} color={COLORS.white} />
@@ -63,18 +73,27 @@ const ServiceScreen = ({navigation}) => {
               })
             }
           />
-          <ServiceButton
+          {/* <ServiceButton
             title="PNR Status"
             icon="list-alt"
             iconSize={30}
             onPress={() =>
               navigation.navigate('ContentScreen', {
                 hTitle: 'PNR Status',
-                link: 'http://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html?locale=hi',
+                link: 'http://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html',
               })
             }
-          />
+          /> */}
         </ScrollView>
+      </Box>
+      <Box>
+        <BannerView
+          placementId={appId.bottom_banner}
+          type="standard"
+          onPress={() => console.log('click')}
+          onLoad={() => console.log('loaded')}
+          onError={err => console.log('error', err)}
+        />
       </Box>
     </>
   );
