@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Button, Heading, Modal, StatusBar, Text} from 'native-base';
+import {Linking} from 'react-native'
 import {BannerView} from 'react-native-fbads';
 import {appId} from '../../../constants';
 import VersionCheck from 'react-native-version-check';

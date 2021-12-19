@@ -9,9 +9,6 @@ import {
   VStack,
   ScrollView,
   StatusBar,
-  Modal,
-  Divider,
-  Button,
 } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
