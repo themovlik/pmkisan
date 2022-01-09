@@ -134,8 +134,8 @@ android {
         applicationId "com.pmkisan"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.2"
     }
     splits {
         abi {
@@ -195,6 +195,10 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+    
+    implementation 'com.facebook.android:audience-network-sdk:6.+'
+
+    implementation 'com.google.android.gms:play-services-ads:20.5.0'
 
     implementation 'com.facebook.fresco:webpsupport:2.5.0'
 

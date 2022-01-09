@@ -4,6 +4,8 @@ import Router from './navigation/router';
 import {NativeBaseProvider} from 'native-base';
 import SplashScreen from 'react-native-splash-screen';
 import OneSignal from 'react-native-onesignal';
+import {AppOpenAdProvider, TestIds} from '@react-native-admob/admob';
+import adsId from './constants/adsId';
 
 const App = () => {
   useEffect(() => {
@@ -33,7 +35,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <NativeBaseProvider>
-        <Router />
+        <AppOpenAdProvider
+          unitId={adsId.appOpen}
+          options={{showOnColdStart: true}}>
+          <Router />
+        </AppOpenAdProvider>
       </NativeBaseProvider>
     </NavigationContainer>
   );
