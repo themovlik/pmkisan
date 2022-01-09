@@ -10,9 +10,11 @@ import {
   AdSettings,
   BannerView,
 } from 'react-native-fbads';
+import {BannerAd, BannerAdSize} from '@react-native-admob/admob';
 
 const ContentScreen = ({navigation, route}) => {
   const [isBack, setIsBack] = useState(false);
+  const [loadAd, setLoadAd] = useState(true);
   const title = route.params.hTitle;
   const link = route.params.link;
   const ref = useRef();
@@ -125,13 +127,20 @@ const ContentScreen = ({navigation, route}) => {
         )}
       </Box>
       <Box>
-        <BannerView
-          placementId="407457797775829_423277576193851"
-          type="standard"
-          onPress={() => console.log('click')}
-          onLoad={() => console.log('loaded')}
-          onError={err => console.log('error', err)}
-        />
+        {loadAd ? (
+          <BannerView
+            placementId={appId.bottom_banner}
+            type="standard"
+            onPress={() => console.log('click')}
+            onLoad={() => setLoadAd(true)}
+            onError={err => setLoadAd(false)}
+          />
+        ) : (
+          <BannerAd
+            size={BannerAdSize.ADAPTIVE_BANNER}
+            unitId={appId.adMobBanner}
+          />
+        )}
       </Box>
     </>
   );

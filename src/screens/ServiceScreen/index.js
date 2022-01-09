@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Box,
   Text,
@@ -9,12 +9,14 @@ import {
   StatusBar,
 } from 'native-base';
 import {BannerView} from 'react-native-fbads';
+import {BannerAd, TestIds, BannerAdSize} from '@react-native-admob/admob';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ServiceButton from '../../../components/ServiceButton';
 import {appId, COLORS} from '../../../constants';
 import Adhar from '../../../assets/images/adhar.png';
 
 const ServiceScreen = ({navigation}) => {
+  const [loadAd, setLoadAd] = useState(true);
   return (
     <>
       <StatusBar backgroundColor="#10b981" barStyle="light-content" />
@@ -84,16 +86,29 @@ const ServiceScreen = ({navigation}) => {
               })
             }
           /> */}
+          <Box alignItems="center" mt="5">
+            <BannerAd
+              size={BannerAdSize.MEDIUM_RECTANGLE}
+              unitId={appId.adMobBanner}
+            />
+          </Box>
         </ScrollView>
       </Box>
       <Box>
-        <BannerView
-          placementId={appId.bottom_banner}
-          type="standard"
-          onPress={() => console.log('click')}
-          onLoad={() => console.log('loaded')}
-          onError={err => console.log('error', err)}
-        />
+        {loadAd ? (
+          <BannerView
+            placementId={appId.bottom_banner}
+            type="standard"
+            onPress={() => console.log('click')}
+            onLoad={() => setLoadAd(true)}
+            onError={err => setLoadAd(false)}
+          />
+        ) : (
+          <BannerAd
+            size={BannerAdSize.ADAPTIVE_BANNER}
+            unitId={appId.adMobBanner}
+          />
+        )}
       </Box>
     </>
   );

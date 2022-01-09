@@ -7,7 +7,7 @@ import {
 import {Box, Heading, Image} from 'native-base';
 
 // Import Screens
-import StartScreen from '../src/screens/StartScreen';
+// import StartScreen from '../src/screens/StartScreen';
 import HomeScreen from '../src/screens/HomeScreen';
 import ServiceScreen from '../src/screens/ServiceScreen';
 import ContentScreen from '../src/screens/ContentScreen';
@@ -76,9 +76,9 @@ const CustomDrawerContent = props => {
 const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="StartScreen"
+      initialRouteName="HomeScreen"
       screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
-      <Stack.Screen name="StartScreen" component={StartScreen} />
+      {/* <Stack.Screen name="StartScreen" component={StartScreen} /> */}
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="ServiceScreen" component={ServiceScreen} />
       <Stack.Screen name="ContentScreen" component={ContentScreen} />

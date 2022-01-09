@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Box,
   HStack,
@@ -13,9 +13,10 @@ import {
   Divider,
   Button,
 } from 'native-base';
+import {BannerView} from 'react-native-fbads';
+import {BannerAd, TestIds, BannerAdSize} from '@react-native-admob/admob';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {BannerView} from 'react-native-fbads';
 import {appId, COLORS} from '../../../constants';
 import {ListContainer} from '../../../components';
 //import Images
@@ -28,6 +29,7 @@ import Pension from '../../../assets/images/pension.png';
 import Panchayat from '../../../assets/images/panchayat.png';
 
 const HomeScreen = ({navigation}) => {
+  const [loadAd, setLoadAd] = useState(true);
   return (
     <>
       <StatusBar backgroundColor="#10b981" barStyle="light-content" />
@@ -240,16 +242,29 @@ const HomeScreen = ({navigation}) => {
               </HStack>
             </Pressable>
           </VStack>
+          <Box alignItems="center" mb="5">
+            <BannerAd
+              size={BannerAdSize.MEDIUM_RECTANGLE}
+              unitId={appId.adMobBanner}
+            />
+          </Box>
         </ScrollView>
       </Box>
       <Box>
-        <BannerView
-          placementId={appId.bottom_banner}
-          type="standard"
-          onPress={() => console.log('click')}
-          onLoad={() => console.log('loaded')}
-          onError={err => console.log('error', err)}
-        />
+        {loadAd ? (
+          <BannerView
+            placementId={appId.bottom_banner}
+            type="standard"
+            onPress={() => console.log('click')}
+            onLoad={() => setLoadAd(true)}
+            onError={err => setLoadAd(false)}
+          />
+        ) : (
+          <BannerAd
+            size={BannerAdSize.ADAPTIVE_BANNER}
+            unitId={appId.adMobBanner}
+          />
+        )}
       </Box>
     </>
   );

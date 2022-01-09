@@ -2,6 +2,8 @@ const adsId = {
   bottom_banner: '407457797775829_437751404746468',
   medium_banner: '407457797775829_437752961412979',
   interstitial: '407457797775829_437752051413070',
+  appOpen: 'ca-app-pub-1248618824488398/5006005434',
+  adMobBanner: 'ca-app-pub-1248618824488398/6378539696',
 };
 
 export default adsId;
